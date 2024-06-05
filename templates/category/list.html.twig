@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}categories{% endblock %}
+
+{% block body %}
+<h1 class="text-8xl text-center p-5">list Category</h1>
+<ul class="text-center  p-10">
+{% for category in Categories  %}
+
+            <li class= " p-5" ><a class="text-3xl p-5 hover:text-blue-300 transition-colors duration-300" href="{{ path ('category_item', {name: category.name}) }}">{{ category.name }}</a> : {{category.article|length}} Articles</li>
+        
+{% else %}
+    <p> Aucune categorie trouvée</p>
+{% endfor %}
+<ul>
+
+{% endblock %}
