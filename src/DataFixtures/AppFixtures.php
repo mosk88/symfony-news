@@ -4,6 +4,7 @@ namespace App\DataFixtures;
 
 use App\Entity\Article;
 use App\Entity\Category;
+use App\Entity\User;
 use DateTime;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
@@ -42,6 +43,11 @@ class AppFixtures extends Fixture
                 $manager->persist($article);
 
     }
+    $user = new User();
+        $user
+            ->setEmail('user@tit.net')
+            ->setPassword('test');
+            $manager->persist($user);
     //envoyer les donnes vers BBD
       $manager->flush();
 }
