@@ -17,6 +17,15 @@
                 <div class="p-5">
                 <h3 class="text-3xl p-5">{{ article.title }}</h3>
                 <p>{{ article.content }}</p>
+                 {% if article.picturefilename is not null %}
+  <p>
+    <img
+      src="{{ '/uploads/article/' ~ article.PictureFilename }}"
+      
+      class="rounded-full max-h-[150px]"
+    />
+  </p>
+  {% endif %}
                </div>
             </div>
         {% else %}
